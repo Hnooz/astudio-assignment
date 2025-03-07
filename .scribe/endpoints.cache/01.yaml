@@ -20,6 +20,7 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
       Api-key: api_key
+      Authorization: 'Bearer {Token}'
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -60,6 +61,7 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
       Api-key: api_key
+      Authorization: 'Bearer {Token}'
     urlParameters:
       id:
         name: id
@@ -112,6 +114,7 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
       Api-key: api_key
+      Authorization: 'Bearer {Token}'
     urlParameters:
       id:
         name: id
@@ -132,7 +135,7 @@ endpoints:
         name: first_name
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: dx
+        example: ryubewzmqt
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -142,7 +145,7 @@ endpoints:
         name: last_name
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: tbjgprd
+        example: arly
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -152,7 +155,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address. Must not be greater than 255 characters.'
         required: true
-        example: sledner@example.org
+        example: wintheiser.cristina@example.net
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -162,7 +165,7 @@ endpoints:
         name: password
         description: 'The content of the post.'
         required: true
-        example: 'T:\hd8i9u'
+        example: 1iahOy+)_A
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -172,18 +175,18 @@ endpoints:
         name: password_confirmation
         description: 'The content of the post.'
         required: true
-        example: aliquid
+        example: aspernatur
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      first_name: dx
-      last_name: tbjgprd
-      email: sledner@example.org
-      password: 'T:\hd8i9u'
-      password_confirmation: aliquid
+      first_name: ryubewzmqt
+      last_name: arly
+      email: wintheiser.cristina@example.net
+      password: 1iahOy+)_A
+      password_confirmation: aspernatur
     fileParameters: []
     responses: []
     responseFields: []
@@ -209,6 +212,7 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
       Api-key: api_key
+      Authorization: 'Bearer {Token}'
     urlParameters:
       id:
         name: id

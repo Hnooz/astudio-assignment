@@ -3,23 +3,23 @@
 namespace App\Http\Controllers\Api\V1;
 
 use App\Actions\AssignProjectAttribute;
-use App\Models\Project;
-use App\Models\Attribute;
-use Illuminate\Support\Arr;
-use App\Models\AttributeValue;
 use App\Http\Controllers\Controller;
-use App\Http\Resources\ProjectResource;
 use App\Http\Requests\StoreProjectRequest;
+use App\Http\Resources\ProjectResource;
+use App\Models\Attribute;
+use App\Models\AttributeValue;
+use App\Models\Project;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 
- /**
+/**
  * @group Projects
  *
  * This set of endpoints lets user to interact with Projects
  */
 class ProjectController extends Controller
 {
-      /**
+    /**
      * projects list
      *
      * This endpoint allow user to fetch all projects
@@ -40,7 +40,7 @@ class ProjectController extends Controller
                             $operator = strtoupper($matches[1]);
                             $value = $matches[2];
                         }
-                        if (!in_array($operator, $allowedOperators)) {
+                        if (! in_array($operator, $allowedOperators)) {
                             return; // Skip invalid operators
                         }
 
@@ -61,18 +61,17 @@ class ProjectController extends Controller
             ->paginate(parent::ELEMENTS_PER_PAGE)
             ->withQueryString();
 
-
-
         return ProjectResource::collection($projects)->additional([
             'meta' => [
                 'success' => true,
                 'code' => 200,
                 'message' => 'Projects fetched successfully',
                 'direct' => null,
-            ]
+            ],
         ]);
     }
- /**
+
+    /**
      * show project
      *
      * This endpoint allow user to get a single project
@@ -95,7 +94,7 @@ class ProjectController extends Controller
     {
         $data = $request->validated();
         $project = Project::create(Arr::except($data, ['attributes']));
-        if (isset($data['attributes'])){
+        if (isset($data['attributes'])) {
             collect($data['attributes'])->each(function ($attrData) use ($project) {
                 $attribute = Attribute::find($attrData['id']);
                 AttributeValue::updateOrCreate(
@@ -105,9 +104,11 @@ class ProjectController extends Controller
 
             });
         }
+
         return $this->sendSuccessResponse(data: new ProjectResource($project), message: 'Project created successfully');
     }
-/**
+
+    /**
      * update project
      *
      * This endpoint allow user to update project with attributes
@@ -119,7 +120,7 @@ class ProjectController extends Controller
         $data = $request->validated();
         $project->update(Arr::except($data, ['attributes']));
 
-        if (isset($data['attributes'])){
+        if (isset($data['attributes'])) {
             collect($data['attributes'])->each(function ($attrData) use ($project) {
                 $attribute = Attribute::find($attrData['id']);
                 AttributeValue::updateOrCreate(
@@ -132,7 +133,8 @@ class ProjectController extends Controller
 
         return $this->sendSuccessResponse(data: new ProjectResource($project), message: 'Project updated successfully');
     }
-/**
+
+    /**
      * delete project
      *
      * This endpoint allow user to delete project with attributes

@@ -15,7 +15,7 @@ it('can register a user', function () {
 it("can't create a new user with invalid data", function () {
     $this->postJson('/api/v1/register', [
         'first_name' => 'John Doe',
-        'last_name' => 'John Doe'
+        'last_name' => 'John Doe',
     ])->assertStatus(422)->assertJsonValidationErrors(['email', 'password']);
 });
 

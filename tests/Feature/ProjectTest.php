@@ -1,10 +1,10 @@
 <?php
 
-use App\Models\User;
-use App\Models\Project;
+use App\Enums\ProjectStatusEnum;
 use App\Models\Attribute;
 use App\Models\AttributeValue;
-use App\Enums\ProjectStatusEnum;
+use App\Models\Project;
+use App\Models\User;
 use Laravel\Passport\Passport;
 
 beforeEach(function () {
@@ -17,11 +17,11 @@ beforeEach(function () {
 });
 it('can get all projects', function () {
     $projects = createModel(model: Project::class, count: 50);
-  
-    // attachModel(model: Project::class, relation: 'users', relatedModel: $this->user);
-     $this->getJson('/api/v1/projects')->assertSuccessful();
 
-     expect($projects->count())->toBe(51);
+    // attachModel(model: Project::class, relation: 'users', relatedModel: $this->user);
+    $this->getJson('/api/v1/projects')->assertSuccessful();
+
+    expect($projects->count())->toBe(51);
 });
 
 it('can get a project', function () {
@@ -45,10 +45,10 @@ it('can create a project', function () {
             'status' => ProjectStatusEnum::ACTIVE->value,
         ],
         'message' => 'Project created successfully',
-    ]); 
+    ]);
 
     expect(Project::count())
-    ->toBe(2); 
+        ->toBe(2);
 
     expect(AttributeValue::count())->toBe(2);
 

@@ -22,6 +22,7 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
       Api-key: api_key
+      Authorization: 'Bearer {Token}'
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -64,6 +65,7 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
       Api-key: api_key
+      Authorization: 'Bearer {Token}'
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -73,7 +75,7 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: non
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -83,15 +85,15 @@ endpoints:
         name: type
         description: ''
         required: true
-        example: consequatur
+        example: atque
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      name: non
-      type: consequatur
+      name: et
+      type: atque
     fileParameters: []
     responses: []
     responseFields: []
@@ -119,6 +121,7 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
       Api-key: api_key
+      Authorization: 'Bearer {Token}'
     urlParameters:
       id:
         name: id
@@ -173,6 +176,7 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
       Api-key: api_key
+      Authorization: 'Bearer {Token}'
     urlParameters:
       id:
         name: id
@@ -193,7 +197,7 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: non
+        example: in
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -203,15 +207,15 @@ endpoints:
         name: type
         description: ''
         required: true
-        example: aperiam
+        example: omnis
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      name: non
-      type: aperiam
+      name: in
+      type: omnis
     fileParameters: []
     responses: []
     responseFields: []
@@ -239,6 +243,7 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
       Api-key: api_key
+      Authorization: 'Bearer {Token}'
     urlParameters:
       id:
         name: id

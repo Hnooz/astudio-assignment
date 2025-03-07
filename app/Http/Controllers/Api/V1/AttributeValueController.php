@@ -2,26 +2,25 @@
 
 namespace App\Http\Controllers\Api\V1;
 
-use Illuminate\Http\Request;
-use App\Models\AttributeValue;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\AttributeValueResource;
+use App\Models\AttributeValue;
+use Illuminate\Http\Request;
 
-
- /**
+/**
  * @group Attribute Values
  *
  * This set of endpoints lets user to interact with attribute values
  */
 class AttributeValueController extends Controller
 {
-     /**
-        * attribute values list
-        *
-        * This endpoint allow user to fetch all attribute values
-        *
-        * @authenticated
-    */
+    /**
+     * attribute values list
+     *
+     * This endpoint allow user to fetch all attribute values
+     *
+     * @authenticated
+     */
     public function index()
     {
         $attribute_values = AttributeValue::latest()->paginate(parent::ELEMENTS_PER_PAGE)->withQueryString();
@@ -32,11 +31,11 @@ class AttributeValueController extends Controller
                 'code' => 200,
                 'message' => 'Attribute values fetched successfully',
                 'direct' => null,
-            ]
+            ],
         ]);
     }
 
-     /**
+    /**
      * show attribute value
      *
      * This endpoint allow user to get a single attribute value
@@ -48,14 +47,13 @@ class AttributeValueController extends Controller
         return $this->sendSuccessResponse(data: new AttributeValueResource($attribute_value));
     }
 
-     /**
+    /**
      * store attribute value
      *
-     * This endpoint allow user to store attribute value 
+     * This endpoint allow user to store attribute value
      *
      * @authenticated
      */
-
     public function store(Request $request)
     {
         $data = $request->validate([
@@ -69,14 +67,13 @@ class AttributeValueController extends Controller
         return $this->sendSuccessResponse(data: new AttributeValueResource($attribute_value), message: 'Attribute value created successfully');
     }
 
-       /**
+    /**
      * update attribute value
      *
-     * This endpoint allow user to update attribute value 
+     * This endpoint allow user to update attribute value
      *
      * @authenticated
      */
-
     public function update(Request $request, AttributeValue $attributeValue)
     {
         $data = $request->validate([

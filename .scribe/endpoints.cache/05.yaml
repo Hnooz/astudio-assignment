@@ -24,6 +24,7 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
       Api-key: api_key
+      Authorization: 'Bearer {Token}'
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -66,6 +67,7 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
       Api-key: api_key
+      Authorization: 'Bearer {Token}'
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -75,7 +77,7 @@ endpoints:
         name: project_id
         description: 'The <code>id</code> of an existing record in the projects table.'
         required: true
-        example: 6
+        example: 3
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -85,7 +87,7 @@ endpoints:
         name: user_id
         description: 'The <code>id</code> of an existing record in the users table.'
         required: true
-        example: 6
+        example: 7
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -95,7 +97,7 @@ endpoints:
         name: date
         description: 'Must be a valid date.'
         required: true
-        example: '2025-03-07T20:19:18'
+        example: '2025-03-07T21:51:59'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -105,7 +107,7 @@ endpoints:
         name: hours
         description: ''
         required: true
-        example: 280212.0
+        example: 302027.566
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -115,18 +117,18 @@ endpoints:
         name: task_name
         description: ''
         required: true
-        example: rerum
+        example: ipsam
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      project_id: 6
-      user_id: 6
-      date: '2025-03-07T20:19:18'
-      hours: 280212.0
-      task_name: rerum
+      project_id: 3
+      user_id: 7
+      date: '2025-03-07T21:51:59'
+      hours: 302027.566
+      task_name: ipsam
     fileParameters: []
     responses: []
     responseFields: []
@@ -154,6 +156,7 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
       Api-key: api_key
+      Authorization: 'Bearer {Token}'
     urlParameters:
       id:
         name: id
@@ -208,6 +211,7 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
       Api-key: api_key
+      Authorization: 'Bearer {Token}'
     urlParameters:
       id:
         name: id
@@ -228,7 +232,7 @@ endpoints:
         name: project_id
         description: 'The <code>id</code> of an existing record in the projects table.'
         required: true
-        example: 12
+        example: 2
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -238,7 +242,7 @@ endpoints:
         name: user_id
         description: 'The <code>id</code> of an existing record in the users table.'
         required: true
-        example: 7
+        example: 11
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -248,7 +252,7 @@ endpoints:
         name: date
         description: 'Must be a valid date.'
         required: true
-        example: '2025-03-07T20:19:18'
+        example: '2025-03-07T21:51:59'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -258,7 +262,7 @@ endpoints:
         name: hours
         description: ''
         required: true
-        example: 3.3228
+        example: 66965458.026
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -268,18 +272,18 @@ endpoints:
         name: task_name
         description: ''
         required: true
-        example: rem
+        example: autem
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      project_id: 12
-      user_id: 7
-      date: '2025-03-07T20:19:18'
-      hours: 3.3228
-      task_name: rem
+      project_id: 2
+      user_id: 11
+      date: '2025-03-07T21:51:59'
+      hours: 66965458.026
+      task_name: autem
     fileParameters: []
     responses: []
     responseFields: []
@@ -307,6 +311,7 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
       Api-key: api_key
+      Authorization: 'Bearer {Token}'
     urlParameters:
       id:
         name: id

@@ -240,7 +240,8 @@ You can switch the language used with the tabs at the top right (or from the nav
     --get "http://astudio-assignment.test/api/v1/attributeValues" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
-    --header "Api-key: api_key"</code></pre></div>
+    --header "Api-key: api_key" \
+    --header "Authorization: Bearer {Token}"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -252,6 +253,7 @@ const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "Api-key": "api_key",
+    "Authorization": "Bearer {Token}",
 };
 
 fetch(url, {
@@ -270,6 +272,7 @@ $response = $client-&gt;get(
             'Content-Type' =&gt; 'application/json',
             'Accept' =&gt; 'application/json',
             'Api-key' =&gt; 'api_key',
+            'Authorization' =&gt; 'Bearer {Token}',
         ],
     ]
 );
@@ -376,6 +379,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>api_key</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-attributeValues"
+               value="Bearer {Token}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {Token}</code></p>
+            </div>
                         </form>
 
                     <h2 id="attribute-values-POSTapi-v1-attributeValues">store attribute value</h2>
@@ -396,10 +410,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "Api-key: api_key" \
+    --header "Authorization: Bearer {Token}" \
     --data "{
-    \"value\": \"excepturi\",
-    \"attribute_id\": 19,
-    \"entity_id\": 8
+    \"value\": \"maxime\",
+    \"attribute_id\": 14,
+    \"entity_id\": 18
 }"
 </code></pre></div>
 
@@ -413,12 +428,13 @@ const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "Api-key": "api_key",
+    "Authorization": "Bearer {Token}",
 };
 
 let body = {
-    "value": "excepturi",
-    "attribute_id": 19,
-    "entity_id": 8
+    "value": "maxime",
+    "attribute_id": 14,
+    "entity_id": 18
 };
 
 fetch(url, {
@@ -438,11 +454,12 @@ $response = $client-&gt;post(
             'Content-Type' =&gt; 'application/json',
             'Accept' =&gt; 'application/json',
             'Api-key' =&gt; 'api_key',
+            'Authorization' =&gt; 'Bearer {Token}',
         ],
         'json' =&gt; [
-            'value' =&gt; 'excepturi',
-            'attribute_id' =&gt; 19,
-            'entity_id' =&gt; 8,
+            'value' =&gt; 'maxime',
+            'attribute_id' =&gt; 14,
+            'entity_id' =&gt; 18,
         ],
     ]
 );
@@ -533,6 +550,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>api_key</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-v1-attributeValues"
+               value="Bearer {Token}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {Token}</code></p>
+            </div>
                                 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>value</code></b>&nbsp;&nbsp;
@@ -540,10 +568,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="value"                data-endpoint="POSTapi-v1-attributeValues"
-               value="excepturi"
+               value="maxime"
                data-component="body">
     <br>
-<p>Example: <code>excepturi</code></p>
+<p>Example: <code>maxime</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>attribute_id</code></b>&nbsp;&nbsp;
@@ -551,10 +579,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="attribute_id"                data-endpoint="POSTapi-v1-attributeValues"
-               value="19"
+               value="14"
                data-component="body">
     <br>
-<p>The <code>id</code> of an existing record in the attributes table. Example: <code>19</code></p>
+<p>The <code>id</code> of an existing record in the attributes table. Example: <code>14</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>entity_id</code></b>&nbsp;&nbsp;
@@ -562,10 +590,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="entity_id"                data-endpoint="POSTapi-v1-attributeValues"
-               value="8"
+               value="18"
                data-component="body">
     <br>
-<p>Example: <code>8</code></p>
+<p>Example: <code>18</code></p>
         </div>
         </form>
 
@@ -586,7 +614,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --get "http://astudio-assignment.test/api/v1/attributeValues/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
-    --header "Api-key: api_key"</code></pre></div>
+    --header "Api-key: api_key" \
+    --header "Authorization: Bearer {Token}"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -598,6 +627,7 @@ const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "Api-key": "api_key",
+    "Authorization": "Bearer {Token}",
 };
 
 fetch(url, {
@@ -616,6 +646,7 @@ $response = $client-&gt;get(
             'Content-Type' =&gt; 'application/json',
             'Accept' =&gt; 'application/json',
             'Api-key' =&gt; 'api_key',
+            'Authorization' =&gt; 'Bearer {Token}',
         ],
     ]
 );
@@ -722,6 +753,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>api_key</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-attributeValues--id-"
+               value="Bearer {Token}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {Token}</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -754,10 +796,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "Api-key: api_key" \
+    --header "Authorization: Bearer {Token}" \
     --data "{
-    \"value\": \"error\",
-    \"attribute_id\": 8,
-    \"entity_id\": 7
+    \"value\": \"quibusdam\",
+    \"attribute_id\": 1,
+    \"entity_id\": 13
 }"
 </code></pre></div>
 
@@ -771,12 +814,13 @@ const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "Api-key": "api_key",
+    "Authorization": "Bearer {Token}",
 };
 
 let body = {
-    "value": "error",
-    "attribute_id": 8,
-    "entity_id": 7
+    "value": "quibusdam",
+    "attribute_id": 1,
+    "entity_id": 13
 };
 
 fetch(url, {
@@ -796,11 +840,12 @@ $response = $client-&gt;put(
             'Content-Type' =&gt; 'application/json',
             'Accept' =&gt; 'application/json',
             'Api-key' =&gt; 'api_key',
+            'Authorization' =&gt; 'Bearer {Token}',
         ],
         'json' =&gt; [
-            'value' =&gt; 'error',
-            'attribute_id' =&gt; 8,
-            'entity_id' =&gt; 7,
+            'value' =&gt; 'quibusdam',
+            'attribute_id' =&gt; 1,
+            'entity_id' =&gt; 13,
         ],
     ]
 );
@@ -895,6 +940,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>api_key</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="PUTapi-v1-attributeValues--id-"
+               value="Bearer {Token}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {Token}</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -914,10 +970,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="value"                data-endpoint="PUTapi-v1-attributeValues--id-"
-               value="error"
+               value="quibusdam"
                data-component="body">
     <br>
-<p>Example: <code>error</code></p>
+<p>Example: <code>quibusdam</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>attribute_id</code></b>&nbsp;&nbsp;
@@ -925,10 +981,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="attribute_id"                data-endpoint="PUTapi-v1-attributeValues--id-"
-               value="8"
+               value="1"
                data-component="body">
     <br>
-<p>The <code>id</code> of an existing record in the attributes table. Example: <code>8</code></p>
+<p>The <code>id</code> of an existing record in the attributes table. Example: <code>1</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>entity_id</code></b>&nbsp;&nbsp;
@@ -936,10 +992,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="entity_id"                data-endpoint="PUTapi-v1-attributeValues--id-"
-               value="7"
+               value="13"
                data-component="body">
     <br>
-<p>Example: <code>7</code></p>
+<p>Example: <code>13</code></p>
         </div>
         </form>
 
@@ -960,7 +1016,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://astudio-assignment.test/api/v1/attributeValues/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
-    --header "Api-key: api_key"</code></pre></div>
+    --header "Api-key: api_key" \
+    --header "Authorization: Bearer {Token}"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -972,6 +1029,7 @@ const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "Api-key": "api_key",
+    "Authorization": "Bearer {Token}",
 };
 
 fetch(url, {
@@ -990,6 +1048,7 @@ $response = $client-&gt;delete(
             'Content-Type' =&gt; 'application/json',
             'Accept' =&gt; 'application/json',
             'Api-key' =&gt; 'api_key',
+            'Authorization' =&gt; 'Bearer {Token}',
         ],
     ]
 );
@@ -1080,6 +1139,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>api_key</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="DELETEapi-v1-attributeValues--id-"
+               value="Bearer {Token}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {Token}</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -1115,7 +1185,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --get "http://astudio-assignment.test/api/v1/attributes" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
-    --header "Api-key: api_key"</code></pre></div>
+    --header "Api-key: api_key" \
+    --header "Authorization: Bearer {Token}"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -1127,6 +1198,7 @@ const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "Api-key": "api_key",
+    "Authorization": "Bearer {Token}",
 };
 
 fetch(url, {
@@ -1145,6 +1217,7 @@ $response = $client-&gt;get(
             'Content-Type' =&gt; 'application/json',
             'Accept' =&gt; 'application/json',
             'Api-key' =&gt; 'api_key',
+            'Authorization' =&gt; 'Bearer {Token}',
         ],
     ]
 );
@@ -1251,6 +1324,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>api_key</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-attributes"
+               value="Bearer {Token}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {Token}</code></p>
+            </div>
                         </form>
 
                     <h2 id="attributes-POSTapi-v1-attributes">store attribute</h2>
@@ -1271,9 +1355,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "Api-key: api_key" \
+    --header "Authorization: Bearer {Token}" \
     --data "{
-    \"name\": \"non\",
-    \"type\": \"consequatur\"
+    \"name\": \"et\",
+    \"type\": \"atque\"
 }"
 </code></pre></div>
 
@@ -1287,11 +1372,12 @@ const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "Api-key": "api_key",
+    "Authorization": "Bearer {Token}",
 };
 
 let body = {
-    "name": "non",
-    "type": "consequatur"
+    "name": "et",
+    "type": "atque"
 };
 
 fetch(url, {
@@ -1311,10 +1397,11 @@ $response = $client-&gt;post(
             'Content-Type' =&gt; 'application/json',
             'Accept' =&gt; 'application/json',
             'Api-key' =&gt; 'api_key',
+            'Authorization' =&gt; 'Bearer {Token}',
         ],
         'json' =&gt; [
-            'name' =&gt; 'non',
-            'type' =&gt; 'consequatur',
+            'name' =&gt; 'et',
+            'type' =&gt; 'atque',
         ],
     ]
 );
@@ -1405,6 +1492,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>api_key</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-v1-attributes"
+               value="Bearer {Token}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {Token}</code></p>
+            </div>
                                 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
@@ -1412,10 +1510,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-v1-attributes"
-               value="non"
+               value="et"
                data-component="body">
     <br>
-<p>Example: <code>non</code></p>
+<p>Example: <code>et</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>type</code></b>&nbsp;&nbsp;
@@ -1423,10 +1521,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="type"                data-endpoint="POSTapi-v1-attributes"
-               value="consequatur"
+               value="atque"
                data-component="body">
     <br>
-<p>Example: <code>consequatur</code></p>
+<p>Example: <code>atque</code></p>
         </div>
         </form>
 
@@ -1447,7 +1545,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --get "http://astudio-assignment.test/api/v1/attributes/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
-    --header "Api-key: api_key"</code></pre></div>
+    --header "Api-key: api_key" \
+    --header "Authorization: Bearer {Token}"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -1459,6 +1558,7 @@ const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "Api-key": "api_key",
+    "Authorization": "Bearer {Token}",
 };
 
 fetch(url, {
@@ -1477,6 +1577,7 @@ $response = $client-&gt;get(
             'Content-Type' =&gt; 'application/json',
             'Accept' =&gt; 'application/json',
             'Api-key' =&gt; 'api_key',
+            'Authorization' =&gt; 'Bearer {Token}',
         ],
     ]
 );
@@ -1583,6 +1684,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>api_key</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-attributes--id-"
+               value="Bearer {Token}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {Token}</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -1615,9 +1727,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "Api-key: api_key" \
+    --header "Authorization: Bearer {Token}" \
     --data "{
-    \"name\": \"non\",
-    \"type\": \"aperiam\"
+    \"name\": \"in\",
+    \"type\": \"omnis\"
 }"
 </code></pre></div>
 
@@ -1631,11 +1744,12 @@ const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "Api-key": "api_key",
+    "Authorization": "Bearer {Token}",
 };
 
 let body = {
-    "name": "non",
-    "type": "aperiam"
+    "name": "in",
+    "type": "omnis"
 };
 
 fetch(url, {
@@ -1655,10 +1769,11 @@ $response = $client-&gt;put(
             'Content-Type' =&gt; 'application/json',
             'Accept' =&gt; 'application/json',
             'Api-key' =&gt; 'api_key',
+            'Authorization' =&gt; 'Bearer {Token}',
         ],
         'json' =&gt; [
-            'name' =&gt; 'non',
-            'type' =&gt; 'aperiam',
+            'name' =&gt; 'in',
+            'type' =&gt; 'omnis',
         ],
     ]
 );
@@ -1753,6 +1868,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>api_key</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="PUTapi-v1-attributes--id-"
+               value="Bearer {Token}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {Token}</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -1772,10 +1898,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="PUTapi-v1-attributes--id-"
-               value="non"
+               value="in"
                data-component="body">
     <br>
-<p>Example: <code>non</code></p>
+<p>Example: <code>in</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>type</code></b>&nbsp;&nbsp;
@@ -1783,10 +1909,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="type"                data-endpoint="PUTapi-v1-attributes--id-"
-               value="aperiam"
+               value="omnis"
                data-component="body">
     <br>
-<p>Example: <code>aperiam</code></p>
+<p>Example: <code>omnis</code></p>
         </div>
         </form>
 
@@ -1807,7 +1933,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://astudio-assignment.test/api/v1/attributes/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
-    --header "Api-key: api_key"</code></pre></div>
+    --header "Api-key: api_key" \
+    --header "Authorization: Bearer {Token}"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -1819,6 +1946,7 @@ const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "Api-key": "api_key",
+    "Authorization": "Bearer {Token}",
 };
 
 fetch(url, {
@@ -1837,6 +1965,7 @@ $response = $client-&gt;delete(
             'Content-Type' =&gt; 'application/json',
             'Accept' =&gt; 'application/json',
             'Api-key' =&gt; 'api_key',
+            'Authorization' =&gt; 'Bearer {Token}',
         ],
     ]
 );
@@ -1927,6 +2056,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>api_key</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="DELETEapi-v1-attributes--id-"
+               value="Bearer {Token}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {Token}</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -1962,9 +2102,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "Api-key: api_key" \
+    --header "Authorization: Bearer {Token}" \
     --data "{
-    \"email\": \"zaria92@example.com\",
-    \"password\": \"enim\"
+    \"email\": \"russel.fae@example.org\",
+    \"password\": \"sunt\"
 }"
 </code></pre></div>
 
@@ -1978,11 +2119,12 @@ const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "Api-key": "api_key",
+    "Authorization": "Bearer {Token}",
 };
 
 let body = {
-    "email": "zaria92@example.com",
-    "password": "enim"
+    "email": "russel.fae@example.org",
+    "password": "sunt"
 };
 
 fetch(url, {
@@ -2002,10 +2144,11 @@ $response = $client-&gt;post(
             'Content-Type' =&gt; 'application/json',
             'Accept' =&gt; 'application/json',
             'Api-key' =&gt; 'api_key',
+            'Authorization' =&gt; 'Bearer {Token}',
         ],
         'json' =&gt; [
-            'email' =&gt; 'zaria92@example.com',
-            'password' =&gt; 'enim',
+            'email' =&gt; 'russel.fae@example.org',
+            'password' =&gt; 'sunt',
         ],
     ]
 );
@@ -2096,6 +2239,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>api_key</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization"                data-endpoint="POSTapi-v1-login"
+               value="Bearer {Token}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {Token}</code></p>
+            </div>
                                 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -2103,10 +2257,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-v1-login"
-               value="zaria92@example.com"
+               value="russel.fae@example.org"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>zaria92@example.com</code></p>
+<p>Must be a valid email address. Example: <code>russel.fae@example.org</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -2114,10 +2268,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-v1-login"
-               value="enim"
+               value="sunt"
                data-component="body">
     <br>
-<p>Example: <code>enim</code></p>
+<p>Example: <code>sunt</code></p>
         </div>
         </form>
 
@@ -2138,12 +2292,13 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "Api-key: api_key" \
+    --header "Authorization: Bearer {Token}" \
     --data "{
-    \"first_name\": \"rfyrvuozzwhjriqwjorlta\",
-    \"last_name\": \"nilvqg\",
-    \"email\": \"hcollins@example.com\",
-    \"password\": \"{DdycEAy)wH6bHZ4Eo?\",
-    \"password_confirmation\": \"cumque\"
+    \"first_name\": \"ypeqgskcymjgwcl\",
+    \"last_name\": \"jkelgqx\",
+    \"email\": \"veichmann@example.com\",
+    \"password\": \"A@EP\\/Q1qzS&lt;\",
+    \"password_confirmation\": \"ut\"
 }"
 </code></pre></div>
 
@@ -2157,14 +2312,15 @@ const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "Api-key": "api_key",
+    "Authorization": "Bearer {Token}",
 };
 
 let body = {
-    "first_name": "rfyrvuozzwhjriqwjorlta",
-    "last_name": "nilvqg",
-    "email": "hcollins@example.com",
-    "password": "{DdycEAy)wH6bHZ4Eo?",
-    "password_confirmation": "cumque"
+    "first_name": "ypeqgskcymjgwcl",
+    "last_name": "jkelgqx",
+    "email": "veichmann@example.com",
+    "password": "A@EP\/Q1qzS&lt;",
+    "password_confirmation": "ut"
 };
 
 fetch(url, {
@@ -2184,13 +2340,14 @@ $response = $client-&gt;post(
             'Content-Type' =&gt; 'application/json',
             'Accept' =&gt; 'application/json',
             'Api-key' =&gt; 'api_key',
+            'Authorization' =&gt; 'Bearer {Token}',
         ],
         'json' =&gt; [
-            'first_name' =&gt; 'rfyrvuozzwhjriqwjorlta',
-            'last_name' =&gt; 'nilvqg',
-            'email' =&gt; 'hcollins@example.com',
-            'password' =&gt; '{DdycEAy)wH6bHZ4Eo?',
-            'password_confirmation' =&gt; 'cumque',
+            'first_name' =&gt; 'ypeqgskcymjgwcl',
+            'last_name' =&gt; 'jkelgqx',
+            'email' =&gt; 'veichmann@example.com',
+            'password' =&gt; 'A@EP/Q1qzS&lt;',
+            'password_confirmation' =&gt; 'ut',
         ],
     ]
 );
@@ -2281,6 +2438,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>api_key</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization"                data-endpoint="POSTapi-v1-register"
+               value="Bearer {Token}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {Token}</code></p>
+            </div>
                                 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>first_name</code></b>&nbsp;&nbsp;
@@ -2288,10 +2456,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="first_name"                data-endpoint="POSTapi-v1-register"
-               value="rfyrvuozzwhjriqwjorlta"
+               value="ypeqgskcymjgwcl"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>rfyrvuozzwhjriqwjorlta</code></p>
+<p>Must not be greater than 255 characters. Example: <code>ypeqgskcymjgwcl</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>last_name</code></b>&nbsp;&nbsp;
@@ -2299,10 +2467,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="last_name"                data-endpoint="POSTapi-v1-register"
-               value="nilvqg"
+               value="jkelgqx"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>nilvqg</code></p>
+<p>Must not be greater than 255 characters. Example: <code>jkelgqx</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -2310,10 +2478,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-v1-register"
-               value="hcollins@example.com"
+               value="veichmann@example.com"
                data-component="body">
     <br>
-<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>hcollins@example.com</code></p>
+<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>veichmann@example.com</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -2321,10 +2489,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-v1-register"
-               value="{DdycEAy)wH6bHZ4Eo?"
+               value="A@EP/Q1qzS<"
                data-component="body">
     <br>
-<p>The content of the post. Example: <code>{DdycEAy)wH6bHZ4Eo?</code></p>
+<p>The content of the post. Example: <code>A@EP/Q1qzS&lt;</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password_confirmation</code></b>&nbsp;&nbsp;
@@ -2332,10 +2500,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password_confirmation"                data-endpoint="POSTapi-v1-register"
-               value="cumque"
+               value="ut"
                data-component="body">
     <br>
-<p>The content of the post. Example: <code>cumque</code></p>
+<p>The content of the post. Example: <code>ut</code></p>
         </div>
         </form>
 
@@ -2356,7 +2524,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://astudio-assignment.test/api/v1/logout" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
-    --header "Api-key: api_key"</code></pre></div>
+    --header "Api-key: api_key" \
+    --header "Authorization: Bearer {Token}"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -2368,6 +2537,7 @@ const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "Api-key": "api_key",
+    "Authorization": "Bearer {Token}",
 };
 
 fetch(url, {
@@ -2386,6 +2556,7 @@ $response = $client-&gt;post(
             'Content-Type' =&gt; 'application/json',
             'Accept' =&gt; 'application/json',
             'Api-key' =&gt; 'api_key',
+            'Authorization' =&gt; 'Bearer {Token}',
         ],
     ]
 );
@@ -2476,6 +2647,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>api_key</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-v1-logout"
+               value="Bearer {Token}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {Token}</code></p>
+            </div>
                         </form>
 
                 <h1 id="endpoints">Endpoints</h1>
@@ -2498,7 +2680,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --get "http://astudio-assignment.test/api/v1/users" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
-    --header "Api-key: api_key"</code></pre></div>
+    --header "Api-key: api_key" \
+    --header "Authorization: Bearer {Token}"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -2510,6 +2693,7 @@ const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "Api-key": "api_key",
+    "Authorization": "Bearer {Token}",
 };
 
 fetch(url, {
@@ -2528,6 +2712,7 @@ $response = $client-&gt;get(
             'Content-Type' =&gt; 'application/json',
             'Accept' =&gt; 'application/json',
             'Api-key' =&gt; 'api_key',
+            'Authorization' =&gt; 'Bearer {Token}',
         ],
     ]
 );
@@ -2634,6 +2819,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>api_key</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization"                data-endpoint="GETapi-v1-users"
+               value="Bearer {Token}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {Token}</code></p>
+            </div>
                         </form>
 
                     <h2 id="endpoints-GETapi-v1-users--id-">GET api/v1/users/{id}</h2>
@@ -2652,7 +2848,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --get "http://astudio-assignment.test/api/v1/users/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
-    --header "Api-key: api_key"</code></pre></div>
+    --header "Api-key: api_key" \
+    --header "Authorization: Bearer {Token}"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -2664,6 +2861,7 @@ const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "Api-key": "api_key",
+    "Authorization": "Bearer {Token}",
 };
 
 fetch(url, {
@@ -2682,6 +2880,7 @@ $response = $client-&gt;get(
             'Content-Type' =&gt; 'application/json',
             'Accept' =&gt; 'application/json',
             'Api-key' =&gt; 'api_key',
+            'Authorization' =&gt; 'Bearer {Token}',
         ],
     ]
 );
@@ -2788,6 +2987,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>api_key</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization"                data-endpoint="GETapi-v1-users--id-"
+               value="Bearer {Token}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {Token}</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -2819,12 +3029,13 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "Api-key: api_key" \
+    --header "Authorization: Bearer {Token}" \
     --data "{
-    \"first_name\": \"dx\",
-    \"last_name\": \"tbjgprd\",
-    \"email\": \"sledner@example.org\",
-    \"password\": \"T:\\\\hd8i9u\",
-    \"password_confirmation\": \"aliquid\"
+    \"first_name\": \"ryubewzmqt\",
+    \"last_name\": \"arly\",
+    \"email\": \"wintheiser.cristina@example.net\",
+    \"password\": \"1iahOy+)_A\",
+    \"password_confirmation\": \"aspernatur\"
 }"
 </code></pre></div>
 
@@ -2838,14 +3049,15 @@ const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "Api-key": "api_key",
+    "Authorization": "Bearer {Token}",
 };
 
 let body = {
-    "first_name": "dx",
-    "last_name": "tbjgprd",
-    "email": "sledner@example.org",
-    "password": "T:\\hd8i9u",
-    "password_confirmation": "aliquid"
+    "first_name": "ryubewzmqt",
+    "last_name": "arly",
+    "email": "wintheiser.cristina@example.net",
+    "password": "1iahOy+)_A",
+    "password_confirmation": "aspernatur"
 };
 
 fetch(url, {
@@ -2865,13 +3077,14 @@ $response = $client-&gt;put(
             'Content-Type' =&gt; 'application/json',
             'Accept' =&gt; 'application/json',
             'Api-key' =&gt; 'api_key',
+            'Authorization' =&gt; 'Bearer {Token}',
         ],
         'json' =&gt; [
-            'first_name' =&gt; 'dx',
-            'last_name' =&gt; 'tbjgprd',
-            'email' =&gt; 'sledner@example.org',
-            'password' =&gt; 'T:\\hd8i9u',
-            'password_confirmation' =&gt; 'aliquid',
+            'first_name' =&gt; 'ryubewzmqt',
+            'last_name' =&gt; 'arly',
+            'email' =&gt; 'wintheiser.cristina@example.net',
+            'password' =&gt; '1iahOy+)_A',
+            'password_confirmation' =&gt; 'aspernatur',
         ],
     ]
 );
@@ -2966,6 +3179,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>api_key</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization"                data-endpoint="PUTapi-v1-users--id-"
+               value="Bearer {Token}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {Token}</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -2985,10 +3209,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="first_name"                data-endpoint="PUTapi-v1-users--id-"
-               value="dx"
+               value="ryubewzmqt"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>dx</code></p>
+<p>Must not be greater than 255 characters. Example: <code>ryubewzmqt</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>last_name</code></b>&nbsp;&nbsp;
@@ -2996,10 +3220,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="last_name"                data-endpoint="PUTapi-v1-users--id-"
-               value="tbjgprd"
+               value="arly"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>tbjgprd</code></p>
+<p>Must not be greater than 255 characters. Example: <code>arly</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -3007,10 +3231,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="PUTapi-v1-users--id-"
-               value="sledner@example.org"
+               value="wintheiser.cristina@example.net"
                data-component="body">
     <br>
-<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>sledner@example.org</code></p>
+<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>wintheiser.cristina@example.net</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -3018,10 +3242,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="PUTapi-v1-users--id-"
-               value="T:\hd8i9u"
+               value="1iahOy+)_A"
                data-component="body">
     <br>
-<p>The content of the post. Example: <code>T:\hd8i9u</code></p>
+<p>The content of the post. Example: <code>1iahOy+)_A</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password_confirmation</code></b>&nbsp;&nbsp;
@@ -3029,10 +3253,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password_confirmation"                data-endpoint="PUTapi-v1-users--id-"
-               value="aliquid"
+               value="aspernatur"
                data-component="body">
     <br>
-<p>The content of the post. Example: <code>aliquid</code></p>
+<p>The content of the post. Example: <code>aspernatur</code></p>
         </div>
         </form>
 
@@ -3052,7 +3276,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://astudio-assignment.test/api/v1/users/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
-    --header "Api-key: api_key"</code></pre></div>
+    --header "Api-key: api_key" \
+    --header "Authorization: Bearer {Token}"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -3064,6 +3289,7 @@ const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "Api-key": "api_key",
+    "Authorization": "Bearer {Token}",
 };
 
 fetch(url, {
@@ -3082,6 +3308,7 @@ $response = $client-&gt;delete(
             'Content-Type' =&gt; 'application/json',
             'Accept' =&gt; 'application/json',
             'Api-key' =&gt; 'api_key',
+            'Authorization' =&gt; 'Bearer {Token}',
         ],
     ]
 );
@@ -3172,6 +3399,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>api_key</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization"                data-endpoint="DELETEapi-v1-users--id-"
+               value="Bearer {Token}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {Token}</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -3207,7 +3445,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --get "http://astudio-assignment.test/api/v1/projects" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
-    --header "Api-key: api_key"</code></pre></div>
+    --header "Api-key: api_key" \
+    --header "Authorization: Bearer {Token}"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -3219,6 +3458,7 @@ const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "Api-key": "api_key",
+    "Authorization": "Bearer {Token}",
 };
 
 fetch(url, {
@@ -3237,6 +3477,7 @@ $response = $client-&gt;get(
             'Content-Type' =&gt; 'application/json',
             'Accept' =&gt; 'application/json',
             'Api-key' =&gt; 'api_key',
+            'Authorization' =&gt; 'Bearer {Token}',
         ],
     ]
 );
@@ -3343,6 +3584,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>api_key</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-projects"
+               value="Bearer {Token}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {Token}</code></p>
+            </div>
                         </form>
 
                     <h2 id="projects-POSTapi-v1-projects">store project</h2>
@@ -3363,9 +3615,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "Api-key: api_key" \
+    --header "Authorization: Bearer {Token}" \
     --data "{
-    \"name\": \"xkkxtcumvdqsgg\",
-    \"status\": \"completed\",
+    \"name\": \"noojxsvlaqqg\",
+    \"status\": \"inactive\",
     \"attributes\": []
 }"
 </code></pre></div>
@@ -3380,11 +3633,12 @@ const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "Api-key": "api_key",
+    "Authorization": "Bearer {Token}",
 };
 
 let body = {
-    "name": "xkkxtcumvdqsgg",
-    "status": "completed",
+    "name": "noojxsvlaqqg",
+    "status": "inactive",
     "attributes": []
 };
 
@@ -3405,10 +3659,11 @@ $response = $client-&gt;post(
             'Content-Type' =&gt; 'application/json',
             'Accept' =&gt; 'application/json',
             'Api-key' =&gt; 'api_key',
+            'Authorization' =&gt; 'Bearer {Token}',
         ],
         'json' =&gt; [
-            'name' =&gt; 'xkkxtcumvdqsgg',
-            'status' =&gt; 'completed',
+            'name' =&gt; 'noojxsvlaqqg',
+            'status' =&gt; 'inactive',
             'attributes' =&gt; [],
         ],
     ]
@@ -3500,6 +3755,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>api_key</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-v1-projects"
+               value="Bearer {Token}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {Token}</code></p>
+            </div>
                                 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
@@ -3507,10 +3773,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-v1-projects"
-               value="xkkxtcumvdqsgg"
+               value="noojxsvlaqqg"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>xkkxtcumvdqsgg</code></p>
+<p>Must not be greater than 255 characters. Example: <code>noojxsvlaqqg</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
@@ -3518,10 +3784,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="status"                data-endpoint="POSTapi-v1-projects"
-               value="completed"
+               value="inactive"
                data-component="body">
     <br>
-<p>Example: <code>completed</code></p>
+<p>Example: <code>inactive</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>active</code></li> <li><code>inactive</code></li> <li><code>pending</code></li> <li><code>completed</code></li> <li><code>cancelled</code></li></ul>
         </div>
@@ -3555,7 +3821,8 @@ Must be one of:
     --get "http://astudio-assignment.test/api/v1/projects/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
-    --header "Api-key: api_key"</code></pre></div>
+    --header "Api-key: api_key" \
+    --header "Authorization: Bearer {Token}"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -3567,6 +3834,7 @@ const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "Api-key": "api_key",
+    "Authorization": "Bearer {Token}",
 };
 
 fetch(url, {
@@ -3585,6 +3853,7 @@ $response = $client-&gt;get(
             'Content-Type' =&gt; 'application/json',
             'Accept' =&gt; 'application/json',
             'Api-key' =&gt; 'api_key',
+            'Authorization' =&gt; 'Bearer {Token}',
         ],
     ]
 );
@@ -3691,6 +3960,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>api_key</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-projects--id-"
+               value="Bearer {Token}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {Token}</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -3723,9 +4003,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "Api-key: api_key" \
+    --header "Authorization: Bearer {Token}" \
     --data "{
-    \"name\": \"javmjsldydrcc\",
-    \"status\": \"pending\",
+    \"name\": \"dqochaoayqbxedywjelyw\",
+    \"status\": \"completed\",
     \"attributes\": []
 }"
 </code></pre></div>
@@ -3740,11 +4021,12 @@ const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "Api-key": "api_key",
+    "Authorization": "Bearer {Token}",
 };
 
 let body = {
-    "name": "javmjsldydrcc",
-    "status": "pending",
+    "name": "dqochaoayqbxedywjelyw",
+    "status": "completed",
     "attributes": []
 };
 
@@ -3765,10 +4047,11 @@ $response = $client-&gt;put(
             'Content-Type' =&gt; 'application/json',
             'Accept' =&gt; 'application/json',
             'Api-key' =&gt; 'api_key',
+            'Authorization' =&gt; 'Bearer {Token}',
         ],
         'json' =&gt; [
-            'name' =&gt; 'javmjsldydrcc',
-            'status' =&gt; 'pending',
+            'name' =&gt; 'dqochaoayqbxedywjelyw',
+            'status' =&gt; 'completed',
             'attributes' =&gt; [],
         ],
     ]
@@ -3864,6 +4147,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>api_key</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="PUTapi-v1-projects--id-"
+               value="Bearer {Token}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {Token}</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -3883,10 +4177,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="PUTapi-v1-projects--id-"
-               value="javmjsldydrcc"
+               value="dqochaoayqbxedywjelyw"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>javmjsldydrcc</code></p>
+<p>Must not be greater than 255 characters. Example: <code>dqochaoayqbxedywjelyw</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
@@ -3894,10 +4188,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="status"                data-endpoint="PUTapi-v1-projects--id-"
-               value="pending"
+               value="completed"
                data-component="body">
     <br>
-<p>Example: <code>pending</code></p>
+<p>Example: <code>completed</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>active</code></li> <li><code>inactive</code></li> <li><code>pending</code></li> <li><code>completed</code></li> <li><code>cancelled</code></li></ul>
         </div>
@@ -3931,7 +4225,8 @@ Must be one of:
     "http://astudio-assignment.test/api/v1/projects/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
-    --header "Api-key: api_key"</code></pre></div>
+    --header "Api-key: api_key" \
+    --header "Authorization: Bearer {Token}"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -3943,6 +4238,7 @@ const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "Api-key": "api_key",
+    "Authorization": "Bearer {Token}",
 };
 
 fetch(url, {
@@ -3961,6 +4257,7 @@ $response = $client-&gt;delete(
             'Content-Type' =&gt; 'application/json',
             'Accept' =&gt; 'application/json',
             'Api-key' =&gt; 'api_key',
+            'Authorization' =&gt; 'Bearer {Token}',
         ],
     ]
 );
@@ -4051,6 +4348,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>api_key</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="DELETEapi-v1-projects--id-"
+               value="Bearer {Token}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {Token}</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -4086,7 +4394,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --get "http://astudio-assignment.test/api/v1/time-sheets" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
-    --header "Api-key: api_key"</code></pre></div>
+    --header "Api-key: api_key" \
+    --header "Authorization: Bearer {Token}"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -4098,6 +4407,7 @@ const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "Api-key": "api_key",
+    "Authorization": "Bearer {Token}",
 };
 
 fetch(url, {
@@ -4116,6 +4426,7 @@ $response = $client-&gt;get(
             'Content-Type' =&gt; 'application/json',
             'Accept' =&gt; 'application/json',
             'Api-key' =&gt; 'api_key',
+            'Authorization' =&gt; 'Bearer {Token}',
         ],
     ]
 );
@@ -4222,6 +4533,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>api_key</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-time-sheets"
+               value="Bearer {Token}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {Token}</code></p>
+            </div>
                         </form>
 
                     <h2 id="time-sheets-POSTapi-v1-time-sheets">store time sheet</h2>
@@ -4242,12 +4564,13 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "Api-key: api_key" \
+    --header "Authorization: Bearer {Token}" \
     --data "{
-    \"project_id\": 6,
-    \"user_id\": 6,
-    \"date\": \"2025-03-07T20:19:18\",
-    \"hours\": 280212,
-    \"task_name\": \"rerum\"
+    \"project_id\": 3,
+    \"user_id\": 7,
+    \"date\": \"2025-03-07T21:51:59\",
+    \"hours\": 302027.566,
+    \"task_name\": \"ipsam\"
 }"
 </code></pre></div>
 
@@ -4261,14 +4584,15 @@ const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "Api-key": "api_key",
+    "Authorization": "Bearer {Token}",
 };
 
 let body = {
-    "project_id": 6,
-    "user_id": 6,
-    "date": "2025-03-07T20:19:18",
-    "hours": 280212,
-    "task_name": "rerum"
+    "project_id": 3,
+    "user_id": 7,
+    "date": "2025-03-07T21:51:59",
+    "hours": 302027.566,
+    "task_name": "ipsam"
 };
 
 fetch(url, {
@@ -4288,13 +4612,14 @@ $response = $client-&gt;post(
             'Content-Type' =&gt; 'application/json',
             'Accept' =&gt; 'application/json',
             'Api-key' =&gt; 'api_key',
+            'Authorization' =&gt; 'Bearer {Token}',
         ],
         'json' =&gt; [
-            'project_id' =&gt; 6,
-            'user_id' =&gt; 6,
-            'date' =&gt; '2025-03-07T20:19:18',
-            'hours' =&gt; 280212.0,
-            'task_name' =&gt; 'rerum',
+            'project_id' =&gt; 3,
+            'user_id' =&gt; 7,
+            'date' =&gt; '2025-03-07T21:51:59',
+            'hours' =&gt; 302027.566,
+            'task_name' =&gt; 'ipsam',
         ],
     ]
 );
@@ -4385,6 +4710,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>api_key</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-v1-time-sheets"
+               value="Bearer {Token}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {Token}</code></p>
+            </div>
                                 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>project_id</code></b>&nbsp;&nbsp;
@@ -4392,10 +4728,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="project_id"                data-endpoint="POSTapi-v1-time-sheets"
-               value="6"
+               value="3"
                data-component="body">
     <br>
-<p>The <code>id</code> of an existing record in the projects table. Example: <code>6</code></p>
+<p>The <code>id</code> of an existing record in the projects table. Example: <code>3</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>user_id</code></b>&nbsp;&nbsp;
@@ -4403,10 +4739,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="user_id"                data-endpoint="POSTapi-v1-time-sheets"
-               value="6"
+               value="7"
                data-component="body">
     <br>
-<p>The <code>id</code> of an existing record in the users table. Example: <code>6</code></p>
+<p>The <code>id</code> of an existing record in the users table. Example: <code>7</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>date</code></b>&nbsp;&nbsp;
@@ -4414,10 +4750,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="date"                data-endpoint="POSTapi-v1-time-sheets"
-               value="2025-03-07T20:19:18"
+               value="2025-03-07T21:51:59"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-03-07T20:19:18</code></p>
+<p>Must be a valid date. Example: <code>2025-03-07T21:51:59</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>hours</code></b>&nbsp;&nbsp;
@@ -4425,10 +4761,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="hours"                data-endpoint="POSTapi-v1-time-sheets"
-               value="280212"
+               value="302027.566"
                data-component="body">
     <br>
-<p>Example: <code>280212</code></p>
+<p>Example: <code>302027.566</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>task_name</code></b>&nbsp;&nbsp;
@@ -4436,10 +4772,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="task_name"                data-endpoint="POSTapi-v1-time-sheets"
-               value="rerum"
+               value="ipsam"
                data-component="body">
     <br>
-<p>Example: <code>rerum</code></p>
+<p>Example: <code>ipsam</code></p>
         </div>
         </form>
 
@@ -4460,7 +4796,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --get "http://astudio-assignment.test/api/v1/time-sheets/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
-    --header "Api-key: api_key"</code></pre></div>
+    --header "Api-key: api_key" \
+    --header "Authorization: Bearer {Token}"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -4472,6 +4809,7 @@ const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "Api-key": "api_key",
+    "Authorization": "Bearer {Token}",
 };
 
 fetch(url, {
@@ -4490,6 +4828,7 @@ $response = $client-&gt;get(
             'Content-Type' =&gt; 'application/json',
             'Accept' =&gt; 'application/json',
             'Api-key' =&gt; 'api_key',
+            'Authorization' =&gt; 'Bearer {Token}',
         ],
     ]
 );
@@ -4596,6 +4935,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>api_key</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-time-sheets--id-"
+               value="Bearer {Token}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {Token}</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -4628,12 +4978,13 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "Api-key: api_key" \
+    --header "Authorization: Bearer {Token}" \
     --data "{
-    \"project_id\": 12,
-    \"user_id\": 7,
-    \"date\": \"2025-03-07T20:19:18\",
-    \"hours\": 3.3228,
-    \"task_name\": \"rem\"
+    \"project_id\": 2,
+    \"user_id\": 11,
+    \"date\": \"2025-03-07T21:51:59\",
+    \"hours\": 66965458.026,
+    \"task_name\": \"autem\"
 }"
 </code></pre></div>
 
@@ -4647,14 +4998,15 @@ const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "Api-key": "api_key",
+    "Authorization": "Bearer {Token}",
 };
 
 let body = {
-    "project_id": 12,
-    "user_id": 7,
-    "date": "2025-03-07T20:19:18",
-    "hours": 3.3228,
-    "task_name": "rem"
+    "project_id": 2,
+    "user_id": 11,
+    "date": "2025-03-07T21:51:59",
+    "hours": 66965458.026,
+    "task_name": "autem"
 };
 
 fetch(url, {
@@ -4674,13 +5026,14 @@ $response = $client-&gt;put(
             'Content-Type' =&gt; 'application/json',
             'Accept' =&gt; 'application/json',
             'Api-key' =&gt; 'api_key',
+            'Authorization' =&gt; 'Bearer {Token}',
         ],
         'json' =&gt; [
-            'project_id' =&gt; 12,
-            'user_id' =&gt; 7,
-            'date' =&gt; '2025-03-07T20:19:18',
-            'hours' =&gt; 3.3228,
-            'task_name' =&gt; 'rem',
+            'project_id' =&gt; 2,
+            'user_id' =&gt; 11,
+            'date' =&gt; '2025-03-07T21:51:59',
+            'hours' =&gt; 66965458.026,
+            'task_name' =&gt; 'autem',
         ],
     ]
 );
@@ -4775,6 +5128,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>api_key</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="PUTapi-v1-time-sheets--id-"
+               value="Bearer {Token}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {Token}</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -4794,10 +5158,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="project_id"                data-endpoint="PUTapi-v1-time-sheets--id-"
-               value="12"
+               value="2"
                data-component="body">
     <br>
-<p>The <code>id</code> of an existing record in the projects table. Example: <code>12</code></p>
+<p>The <code>id</code> of an existing record in the projects table. Example: <code>2</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>user_id</code></b>&nbsp;&nbsp;
@@ -4805,10 +5169,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="user_id"                data-endpoint="PUTapi-v1-time-sheets--id-"
-               value="7"
+               value="11"
                data-component="body">
     <br>
-<p>The <code>id</code> of an existing record in the users table. Example: <code>7</code></p>
+<p>The <code>id</code> of an existing record in the users table. Example: <code>11</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>date</code></b>&nbsp;&nbsp;
@@ -4816,10 +5180,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="date"                data-endpoint="PUTapi-v1-time-sheets--id-"
-               value="2025-03-07T20:19:18"
+               value="2025-03-07T21:51:59"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-03-07T20:19:18</code></p>
+<p>Must be a valid date. Example: <code>2025-03-07T21:51:59</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>hours</code></b>&nbsp;&nbsp;
@@ -4827,10 +5191,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="hours"                data-endpoint="PUTapi-v1-time-sheets--id-"
-               value="3.3228"
+               value="66965458.026"
                data-component="body">
     <br>
-<p>Example: <code>3.3228</code></p>
+<p>Example: <code>66965458.026</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>task_name</code></b>&nbsp;&nbsp;
@@ -4838,10 +5202,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="task_name"                data-endpoint="PUTapi-v1-time-sheets--id-"
-               value="rem"
+               value="autem"
                data-component="body">
     <br>
-<p>Example: <code>rem</code></p>
+<p>Example: <code>autem</code></p>
         </div>
         </form>
 
@@ -4862,7 +5226,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://astudio-assignment.test/api/v1/time-sheets/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
-    --header "Api-key: api_key"</code></pre></div>
+    --header "Api-key: api_key" \
+    --header "Authorization: Bearer {Token}"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -4874,6 +5239,7 @@ const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "Api-key": "api_key",
+    "Authorization": "Bearer {Token}",
 };
 
 fetch(url, {
@@ -4892,6 +5258,7 @@ $response = $client-&gt;delete(
             'Content-Type' =&gt; 'application/json',
             'Accept' =&gt; 'application/json',
             'Api-key' =&gt; 'api_key',
+            'Authorization' =&gt; 'Bearer {Token}',
         ],
     ]
 );
@@ -4981,6 +5348,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
                data-component="header">
     <br>
 <p>Example: <code>api_key</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="DELETEapi-v1-time-sheets--id-"
+               value="Bearer {Token}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {Token}</code></p>
             </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">

@@ -3,11 +3,10 @@
 namespace Database\Seeders;
 
 use App\Models\AttributeValue;
-use App\Models\User;
 use App\Models\Project;
 use App\Models\TimeSheet;
+use App\Models\User;
 use Illuminate\Database\Seeder;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class ProjectSeeder extends Seeder
 {
@@ -22,7 +21,7 @@ class ProjectSeeder extends Seeder
                 'project_id' => $project->id,
                 'user_id' => $user->id,
             ]);
-            
+
             $project->users()->attach($user->id);
             AttributeValue::factory()->create([
                 'value' => fake()->words(3, true),

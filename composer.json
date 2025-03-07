@@ -15,6 +15,7 @@
         "laravel/tinker": "^2.10.1"
     },
     "require-dev": {
+        "driftingly/rector-laravel": "^1.2",
         "fakerphp/faker": "^1.23",
         "knuckleswtf/scribe": "^5.1",
         "laravel/pail": "^1.2.2",
@@ -22,6 +23,7 @@
         "laravel/sail": "^1.41",
         "mockery/mockery": "^1.6",
         "nunomaduro/collision": "^8.6",
+        "rector/rector": "^1.1",
         "pestphp/pest": "^3.7"
     },
     "autoload": {
@@ -51,6 +53,22 @@
             "@php artisan key:generate --ansi",
             "@php -r \"file_exists('database/database.sqlite') || touch('database/database.sqlite');\"",
             "@php artisan migrate --graceful --ansi"
+        ],
+        "fresh": "php artisan migrate:fresh --seed --force && php artisan optimize:clear",
+        "start": "php artisan migrate:fresh --seed && php artisan optimize:clear && php artisan scribe:generate && php artisan serve",
+        "docs": "@php artisan scribe:generate",
+        "pest": "php -d memory_limit=512M ./vendor/bin/pest --parallel",
+        "style-fix": "vendor/bin/pint",
+        "style-check": "./vendor/bin/pint --test",
+        "rector-dry": [
+            "./vendor/bin/rector process --dry-run"
+        ],
+        "rector-fix": [
+            "./vendor/bin/rector process"
+        ],
+        "ci-check": [
+            "composer style-check",
+            "composer rector-dry"
         ],
         "dev": [
             "Composer\\Config::disableProcessTimeout",

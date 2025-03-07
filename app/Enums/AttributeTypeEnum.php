@@ -21,11 +21,11 @@ enum AttributeTypeEnum: string
 
     public static function labels(): array
     {
-        return array_map(fn($case) => $case->label(), self::cases());
+        return array_map(fn ($case) => $case->label(), self::cases());
     }
 
     public static function labelsWithIds(): array
     {
-        return array_map(fn($case) => ['id' => $case->value, 'label' => $case->label()], self::cases());
+        return array_map(fn ($case) => ['id' => $case->value, 'label' => $case->label()], self::cases());
     }
 }

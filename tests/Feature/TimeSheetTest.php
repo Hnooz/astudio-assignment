@@ -1,8 +1,8 @@
 <?php
 
-use App\Models\User;
 use App\Models\Project;
 use App\Models\TimeSheet;
+use App\Models\User;
 
 beforeEach(function () {
     $this->user = createModel(model: User::class);
@@ -42,15 +42,15 @@ it('can create a time sheet', function () {
         'date' => now()->format('Y-m-d'),
         'hours' => 8,
     ])
-    ->assertSuccessful()
-    ->assertJson([
-        'data' => [
-            'project_id' => $project->id,
-            'date' => now()->format('Y-m-d'),
-            'hours' => 8,
-        ],
-        'message' => 'Time sheet created successfully',
-    ]);
+        ->assertSuccessful()
+        ->assertJson([
+            'data' => [
+                'project_id' => $project->id,
+                'date' => now()->format('Y-m-d'),
+                'hours' => 8,
+            ],
+            'message' => 'Time sheet created successfully',
+        ]);
 
     expect(TimeSheet::count())->toBe(1);
 });
@@ -69,7 +69,7 @@ it('can update a time sheet', function () {
         'user_id' => $this->user->id,
         'project_id' => $project_id,
     ])
-    ->assertSuccessful();
+        ->assertSuccessful();
 
     expect($timeSheet->fresh()->task_name)->toBe('Task 2');
 });

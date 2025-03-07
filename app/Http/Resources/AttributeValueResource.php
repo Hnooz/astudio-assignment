@@ -17,7 +17,7 @@ class AttributeValueResource extends JsonResource
         return [
             'id' => $this->id,
             'value' => $this->value,
-            'entity_id' => $this->entity_id, 
+            'entity_id' => $this->entity_id,
             'attribute' => AttributeResource::make($this->whenLoaded('attribute')),
         ];
     }

@@ -1,7 +1,6 @@
 <?php
 
 use App\Models\User;
-use Database\Seeders\UserSeeder;
 
 beforeEach(function () {
     $this->user = createModel(model: User::class, attributes: [
@@ -14,12 +13,12 @@ beforeEach(function () {
 it('can get all users', function () {
     $users = createModel(model: User::class, count: 50);
     $this->getJson('/api/v1/users')->assertSuccessful();
-    
+
     expect($users->count())->toBe(51);
 });
 
 it('can get a user', function () {
-    $this->getJson('/api/v1/users/' . $this->user->id)->assertSuccessful();
+    $this->getJson('/api/v1/users/'.$this->user->id)->assertSuccessful();
 });
 
 it('can update a user', function () {

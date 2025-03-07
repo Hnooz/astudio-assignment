@@ -2,25 +2,25 @@
 
 namespace App\Http\Controllers\Api\V1;
 
-use App\Models\Attribute;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\AttributeResource;
+use App\Models\Attribute;
+use Illuminate\Http\Request;
 
- /**
+/**
  * @group Attributes
  *
  * This set of endpoints lets user to interact with attributes
  */
 class AttributeController extends Controller
 {
-     /**
-        * attribute list
-        *
-        * This endpoint allow user to fetch all attribute
-        *
-        * @authenticated
-    */
+    /**
+     * attribute list
+     *
+     * This endpoint allow user to fetch all attribute
+     *
+     * @authenticated
+     */
     public function index()
     {
         $attributes = Attribute::latest()->paginate(parent::ELEMENTS_PER_PAGE)->withQueryString();
@@ -31,9 +31,10 @@ class AttributeController extends Controller
                 'code' => 200,
                 'message' => 'Attributes fetched successfully',
                 'direct' => null,
-            ]
+            ],
         ]);
     }
+
     /**
      * show attribute
      *
@@ -49,7 +50,7 @@ class AttributeController extends Controller
     /**
      * store attribute
      *
-     * This endpoint allow user to store attribute 
+     * This endpoint allow user to store attribute
      *
      * @authenticated
      */
@@ -65,10 +66,10 @@ class AttributeController extends Controller
         return $this->sendSuccessResponse(data: new AttributeResource($attribute), message: 'Attribute created successfully');
     }
 
-     /**
+    /**
      * update attribute
      *
-     * This endpoint allow user to update attribute 
+     * This endpoint allow user to update attribute
      *
      * @authenticated
      */
@@ -83,7 +84,8 @@ class AttributeController extends Controller
 
         return $this->sendSuccessResponse(data: new AttributeResource($attribute), message: 'Attribute updated successfully');
     }
-/**
+
+    /**
      * delete attribute
      *
      * This endpoint allow user to delete attribute with attributes

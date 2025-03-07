@@ -24,6 +24,7 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
       Api-key: api_key
+      Authorization: 'Bearer {Token}'
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -66,6 +67,7 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
       Api-key: api_key
+      Authorization: 'Bearer {Token}'
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -75,7 +77,7 @@ endpoints:
         name: name
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: xkkxtcumvdqsgg
+        example: noojxsvlaqqg
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -85,7 +87,7 @@ endpoints:
         name: status
         description: ''
         required: true
-        example: completed
+        example: inactive
         type: string
         enumValues:
           - active
@@ -107,8 +109,8 @@ endpoints:
         nullable: false
         custom: []
     cleanBodyParameters:
-      name: xkkxtcumvdqsgg
-      status: completed
+      name: noojxsvlaqqg
+      status: inactive
       attributes: []
     fileParameters: []
     responses: []
@@ -137,6 +139,7 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
       Api-key: api_key
+      Authorization: 'Bearer {Token}'
     urlParameters:
       id:
         name: id
@@ -191,6 +194,7 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
       Api-key: api_key
+      Authorization: 'Bearer {Token}'
     urlParameters:
       id:
         name: id
@@ -211,7 +215,7 @@ endpoints:
         name: name
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: javmjsldydrcc
+        example: dqochaoayqbxedywjelyw
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -221,7 +225,7 @@ endpoints:
         name: status
         description: ''
         required: true
-        example: pending
+        example: completed
         type: string
         enumValues:
           - active
@@ -243,8 +247,8 @@ endpoints:
         nullable: false
         custom: []
     cleanBodyParameters:
-      name: javmjsldydrcc
-      status: pending
+      name: dqochaoayqbxedywjelyw
+      status: completed
       attributes: []
     fileParameters: []
     responses: []
@@ -273,6 +277,7 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
       Api-key: api_key
+      Authorization: 'Bearer {Token}'
     urlParameters:
       id:
         name: id

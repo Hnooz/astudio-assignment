@@ -24,6 +24,7 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
       Api-key: api_key
+      Authorization: 'Bearer {Token}'
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -33,7 +34,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: zaria92@example.com
+        example: russel.fae@example.org
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -43,15 +44,15 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: enim
+        example: sunt
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      email: zaria92@example.com
-      password: enim
+      email: russel.fae@example.org
+      password: sunt
     fileParameters: []
     responses: []
     responseFields: []
@@ -79,6 +80,7 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
       Api-key: api_key
+      Authorization: 'Bearer {Token}'
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -88,7 +90,7 @@ endpoints:
         name: first_name
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: rfyrvuozzwhjriqwjorlta
+        example: ypeqgskcymjgwcl
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -98,7 +100,7 @@ endpoints:
         name: last_name
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: nilvqg
+        example: jkelgqx
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -108,7 +110,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address. Must not be greater than 255 characters.'
         required: true
-        example: hcollins@example.com
+        example: veichmann@example.com
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -118,7 +120,7 @@ endpoints:
         name: password
         description: 'The content of the post.'
         required: true
-        example: '{DdycEAy)wH6bHZ4Eo?'
+        example: A@EP/Q1qzS<
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -128,18 +130,18 @@ endpoints:
         name: password_confirmation
         description: 'The content of the post.'
         required: true
-        example: cumque
+        example: ut
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      first_name: rfyrvuozzwhjriqwjorlta
-      last_name: nilvqg
-      email: hcollins@example.com
-      password: '{DdycEAy)wH6bHZ4Eo?'
-      password_confirmation: cumque
+      first_name: ypeqgskcymjgwcl
+      last_name: jkelgqx
+      email: veichmann@example.com
+      password: A@EP/Q1qzS<
+      password_confirmation: ut
     fileParameters: []
     responses: []
     responseFields: []
@@ -167,6 +169,7 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
       Api-key: api_key
+      Authorization: 'Bearer {Token}'
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []

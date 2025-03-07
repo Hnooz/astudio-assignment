@@ -13,7 +13,7 @@ use Laravel\Passport\HasApiTokens;
 class User extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
-    use HasFactory, Notifiable, HasApiTokens;
+    use HasApiTokens, HasFactory, Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -50,12 +50,12 @@ class User extends Authenticatable
         ];
     }
 
-    public function projects():BelongsToMany
+    public function projects(): BelongsToMany
     {
         return $this->belongsToMany(Project::class, 'user_project');
     }
 
-    public function timeSheets():HasMany
+    public function timeSheets(): HasMany
     {
         return $this->hasMany(TimeSheet::class);
     }
