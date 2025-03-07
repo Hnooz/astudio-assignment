@@ -21,9 +21,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Passport::hashClientSecrets();
-
-        Passport::tokensExpireIn(now()->addDays(7));
-        Passport::refreshTokensExpireIn(now()->addDays(10));
+        Passport::tokensExpireIn(now()->addDays(4));
+        Passport::refreshTokensExpireIn(now()->addDays(30));
         Passport::personalAccessTokensExpireIn(now()->addMonths(6));
     }
 }

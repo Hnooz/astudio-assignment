@@ -1,0 +1,266 @@
+name: Attributes
+description: |-
+
+  This set of endpoints lets user to interact with attributes
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/attributes
+    metadata:
+      groupName: Attributes
+      groupDescription: |-
+
+        This set of endpoints lets user to interact with attributes
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'attribute list'
+      description: 'This endpoint allow user to fetch all attribute'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Api-key: api_key
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/attributes
+    metadata:
+      groupName: Attributes
+      groupDescription: |-
+
+        This set of endpoints lets user to interact with attributes
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'store attribute'
+      description: 'This endpoint allow user to store attribute'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Api-key: api_key
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: ''
+        required: true
+        example: non
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      type:
+        name: type
+        description: ''
+        required: true
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      name: non
+      type: consequatur
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/attributes/{id}'
+    metadata:
+      groupName: Attributes
+      groupDescription: |-
+
+        This set of endpoints lets user to interact with attributes
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'show attribute'
+      description: 'This endpoint allow user to get a single attribute'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Api-key: api_key
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the attribute.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/v1/attributes/{id}'
+    metadata:
+      groupName: Attributes
+      groupDescription: |-
+
+        This set of endpoints lets user to interact with attributes
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'update attribute'
+      description: 'This endpoint allow user to update attribute'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Api-key: api_key
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the attribute.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: ''
+        required: true
+        example: non
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      type:
+        name: type
+        description: ''
+        required: true
+        example: aperiam
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      name: non
+      type: aperiam
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/attributes/{id}'
+    metadata:
+      groupName: Attributes
+      groupDescription: |-
+
+        This set of endpoints lets user to interact with attributes
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'delete attribute'
+      description: 'This endpoint allow user to delete attribute with attributes'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Api-key: api_key
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the attribute.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

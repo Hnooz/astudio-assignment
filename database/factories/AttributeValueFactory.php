@@ -18,8 +18,8 @@ class AttributeValueFactory extends Factory
     {
         return [
             'value' => fake()->words(3, true),
-            'attribute_id' => \App\Models\Attribute::factory(),
-            'entity_id' => \App\Models\Project::factory(),
+            'attribute_id' => fake()->numberBetween(1, 100),
+            'entity_id' => fake()->numberBetween(1, 100),
         ];
     }
 }

@@ -5,6 +5,7 @@ use App\Models\Project;
 use App\Models\Attribute;
 use App\Models\AttributeValue;
 use App\Enums\ProjectStatusEnum;
+use Laravel\Passport\Passport;
 
 beforeEach(function () {
     $this->user = createModel(model: User::class);
@@ -12,9 +13,11 @@ beforeEach(function () {
         'name' => 'Project 1',
         'status' => ProjectStatusEnum::ACTIVE,
     ]);
+    Passport::actingAs($this->user, ['*']);
 });
 it('can get all projects', function () {
     $projects = createModel(model: Project::class, count: 50);
+  
     // attachModel(model: Project::class, relation: 'users', relatedModel: $this->user);
      $this->getJson('/api/v1/projects')->assertSuccessful();
 

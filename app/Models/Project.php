@@ -32,6 +32,6 @@ class Project extends Model
 
     public function attributeValues(): HasMany
     {
-        return $this->hasMany(AttributeValue::class, 'entity_id');
+        return $this->hasMany(AttributeValue::class, 'entity_id', 'id');
     }
 }

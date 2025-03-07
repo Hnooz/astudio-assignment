@@ -14,6 +14,13 @@ class TimeSheetResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return parent::toArray($request);
+        return [
+            'id' => $this->id,
+            'task_name' => $this->task_name,
+            'date' => $this->date,
+            'hours' => $this->hours,
+            'project' => ProjectResource::make($this->whenLoaded('project')),
+            'user' => UserResource::make($this->whenLoaded('user')),
+        ];
     }
 }

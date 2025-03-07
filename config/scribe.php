@@ -9,14 +9,14 @@ use function Knuckles\Scribe\Config\{removeStrategies, configureStrategy};
 
 return [
     // The HTML <title> for the generated documentation.
-    'title' => config('app.name').' API Documentation',
+    'title' => 'A Studio API',
 
     // A short description of your API. Will be included in the docs webpage, Postman collection and OpenAPI spec.
     'description' => '',
 
     // The base URL displayed in the docs.
     // If you're using `laravel` type, you can set this to a dynamic string, like '{{ config("app.tenant_url") }}' to get a dynamic base URL.
-    'base_url' => config("app.url"),
+    'base_url' => null,
 
     // Routes to include in the docs
     'routes' => [
@@ -27,6 +27,9 @@ return [
 
                 // Match only routes whose domains match this pattern (use * as a wildcard to match any characters). Example: 'api.*'.
                 'domains' => ['*'],
+
+                 // [Dingo router only] Match only routes registered under this version. Wildcards are NOT supported.
+                 'versions' => ['v1'],
             ],
 
             // Include these routes even if they did not match the rules above.
@@ -134,6 +137,7 @@ return [
     'example_languages' => [
         'bash',
         'javascript',
+        'php'
     ],
 
     // Generate a Postman collection (v2.1.0) in addition to HTML docs.
@@ -194,7 +198,7 @@ return [
 
     'examples' => [
         // Set this to any number to generate the same example values for parameters on each run,
-        'faker_seed' => 1234,
+        'faker_seed' => null,
 
         // With API resources and transformers, Scribe tries to generate example models to use in your API responses.
         // By default, Scribe will try the model's factory, and if that fails, try fetching the first from the database.
@@ -214,6 +218,7 @@ return [
             Strategies\StaticData::withSettings(data: [
                 'Content-Type' => 'application/json',
                 'Accept' => 'application/json',
+                'Api-key' => 'api_key',
             ]),
         ],
         'urlParameters' => [

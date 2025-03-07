@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\AttributeValue;
 use App\Models\User;
 use App\Models\Project;
 use App\Models\TimeSheet;
@@ -23,8 +24,9 @@ class ProjectSeeder extends Seeder
             ]);
             
             $project->users()->attach($user->id);
-            $project->attributeValues()->create([
+            AttributeValue::factory()->create([
                 'value' => fake()->words(3, true),
+                'entity_id' => $project->id,
                 'attribute_id' => \App\Models\Attribute::factory(),
             ]);
         });

@@ -14,5 +14,9 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         UserSeeder::class;
+        ProjectSeeder::class;
+        AttributeSeeder::class;
+        AttributeValueSeeder::class;
+        TimeSheetSeeder::class;
     }
 }

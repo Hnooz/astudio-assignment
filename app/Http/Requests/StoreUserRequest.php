@@ -3,8 +3,11 @@
 namespace App\Http\Requests;
 
 use Illuminate\Validation\Rules\Password;
+use Knuckles\Scribe\Attributes\BodyParam;
 use Illuminate\Foundation\Http\FormRequest;
 
+#[BodyParam("password", "string", "The content of the post.")]
+#[BodyParam("password_confirmation", "string", "The content of the post.")]
 class StoreUserRequest extends FormRequest
 {
     /**

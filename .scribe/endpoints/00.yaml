@@ -1,0 +1,181 @@
+name: Authentications
+description: |-
+
+  This set of endpoints lets user to interact with OnBoarding
+endpoints:
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/login
+    metadata:
+      groupName: Authentications
+      groupDescription: |-
+
+        This set of endpoints lets user to interact with OnBoarding
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Login to the platform'
+      description: 'This endpoint allow user Login to the platform'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Api-key: api_key
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      email:
+        name: email
+        description: 'Must be a valid email address.'
+        required: true
+        example: zaria92@example.com
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      password:
+        name: password
+        description: ''
+        required: true
+        example: enim
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      email: zaria92@example.com
+      password: enim
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/register
+    metadata:
+      groupName: Authentications
+      groupDescription: |-
+
+        This set of endpoints lets user to interact with OnBoarding
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Register to the platform'
+      description: 'This endpoint allow user Register to the platform'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Api-key: api_key
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      first_name:
+        name: first_name
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: rfyrvuozzwhjriqwjorlta
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      last_name:
+        name: last_name
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: nilvqg
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      email:
+        name: email
+        description: 'Must be a valid email address. Must not be greater than 255 characters.'
+        required: true
+        example: hcollins@example.com
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      password:
+        name: password
+        description: 'The content of the post.'
+        required: true
+        example: '{DdycEAy)wH6bHZ4Eo?'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      password_confirmation:
+        name: password_confirmation
+        description: 'The content of the post.'
+        required: true
+        example: cumque
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      first_name: rfyrvuozzwhjriqwjorlta
+      last_name: nilvqg
+      email: hcollins@example.com
+      password: '{DdycEAy)wH6bHZ4Eo?'
+      password_confirmation: cumque
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/logout
+    metadata:
+      groupName: Authentications
+      groupDescription: |-
+
+        This set of endpoints lets user to interact with OnBoarding
+      subgroup: ''
+      subgroupDescription: ''
+      title: logout
+      description: 'This endpoint allow user to logout from our portal'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Api-key: api_key
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

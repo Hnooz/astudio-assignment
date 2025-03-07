@@ -7,7 +7,7 @@ it('can register a user', function () {
         'email' => 'email@test.com',
         'password' => 'password',
         'password_confirmation' => 'password',
-    ])->assertStatus(200);
+    ])->assertStatus(200)->dd();
 
     expect($response->json('message'))->toBe('User registered successfully');
 });

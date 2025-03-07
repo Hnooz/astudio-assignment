@@ -5,7 +5,7 @@ namespace App\Http\Resources;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class ProjectResource extends JsonResource
+class AttributeResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -17,10 +17,7 @@ class ProjectResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
-            'status' => $this->status,
-            'attribute_values' => AttributeValueResource::collection($this->whenLoaded('attributeValues')),
-            'time_sheets' => TimeSheetResource::collection($this->whenLoaded('timeSheets')),
-            'users' => UserResource::collection($this->whenLoaded('users')),
+            'type' => $this->type,
         ];
     }
 }
